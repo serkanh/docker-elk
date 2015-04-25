@@ -1,7 +1,7 @@
 elasticsearch:
   image: deviantony/elk-elasticsearch
-#  ports:
-#    - "9200:9200"
+  ports:
+  - "9200:9200"
 logstash:
   image: deviantony/elk-logstash
   volumes:
@@ -10,12 +10,12 @@ logstash:
     - "5000:5000"  
   links:
     - elasticsearch
-#kibana3:
-#  image: deviantony/elk-kibana:kibana3
-#  ports:
-#    - "8080:80"
-#  links:
-#    - elasticsearch
+kibana3:
+  image: deviantony/elk-kibana:kibana3
+  ports:
+    - "8080:80"
+  links:
+    - elasticsearch
 kibana4:
   image: deviantony/elk-kibana
   ports:
